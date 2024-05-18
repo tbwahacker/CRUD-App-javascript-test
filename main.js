@@ -20,7 +20,7 @@ addForm.addEventListener("submit", async (e) => {
     } else {
         document.getElementById("add-user-btn").value = "Please Wait...";
 
-        const data = await fetch("http://localhost:8000/api/add_users/", {
+        const data = await fetch(`${Api_url}/add_users/`, {
             method: "POST",
             body: formData,
         });
@@ -36,7 +36,7 @@ addForm.addEventListener("submit", async (e) => {
 });
 
 const fetchAllUsers = async () => {
-    const data = await fetch("http://localhost:8000/api/get_users/", {
+    const data = await fetch(Api_url+"/get_users/", {
         method: "GET",
     });
     const responseData = await data.json();
@@ -77,7 +77,7 @@ document.addEventListener('click', function(event) {
 
 const editUser = async (id) => {
 
-    const data = await fetch(`http://localhost:8000/api/get_user/${id}/`, {
+    const data = await fetch(`${Api_url}/get_user/${id}/`, {
         method: "GET",
     });
     const response = await data.json();
@@ -117,7 +117,7 @@ updateForm.addEventListener("submit", async (e) => {
     } else {
         document.getElementById("edit-user-btn").value = "Please Wait...";
 
-        const data = await fetch('http://localhost:8000/api/update_user/'+id+'/', {
+        const data = await fetch(`${Api_url}/update_user/${id}/`, {
             method: "POST",
             body: formData,
         });
@@ -132,7 +132,7 @@ updateForm.addEventListener("submit", async (e) => {
 });
 
 const deleteUser = async (id) => {
-    const data = await fetch(`http://localhost:8000/api/delete_user/${id}/`, {
+    const data = await fetch(`${Api_url}/delete_user/${id}/`, {
         method: "DELETE",
     });
     const response = await data.json();
