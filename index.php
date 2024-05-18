@@ -43,11 +43,6 @@
                     </div>
 
                     <div class="mb-3">
-                        <input type="tel" name="phone" class="form-control form-control-lg" placeholder="Enter Phone" required>
-                        <div class="invalid-feedback">Phone is required!</div>
-                    </div>
-
-                    <div class="mb-3">
                         <input type="password" name="password" class="form-control form-control-lg" placeholder="Enter Password" required>
                         <div class="invalid-feedback">Password is required!</div>
                     </div>
@@ -68,7 +63,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="editUserModalLabel">Edit User</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <!-- Edit user form -->
@@ -89,8 +84,8 @@
                         <div class="invalid-feedback">E-mail is required!</div>
                     </div>
                     <div class="mb-3">
-                        <input type="tel" name="phone" id="editPhone" class="form-control form-control-lg" placeholder="Enter Phone" required>
-                        <div class="invalid-feedback">Phone is required!</div>
+                        <input type="tel" name="username" id="editUsername" class="form-control form-control-lg" placeholder="Enter Username" required>
+                        <div class="invalid-feedback">Username is required!</div>
                     </div>
                     <div class="mb-3">
                         <input type="password" name="password" id="editPassword" class="form-control form-control-lg" placeholder="Enter Password" required>

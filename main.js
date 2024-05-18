@@ -50,7 +50,7 @@ const fetchAllUsers = async () => {
                     <td>${user.email}</td>
                     <td>${user.username}</td>
                     <td>
-                        <button class="btn btn-primary btn-sm editLink me-2" id="${user.id}">Edit</button>
+                        <button class="btn btn-primary btn-sm editLink me-2" data-toggle="modal" data-target="#editUserModal" id="${user.id}">Edit</button>
                         <button class="btn btn-danger btn-sm deleteLink me-2" id="${user.id}">Delete</button>
                     </td>
                 </tr>`;
@@ -90,7 +90,7 @@ const editUser = async (id) => {
         document.getElementById("editFirstName").value = user.first_name;
         document.getElementById("editLastName").value = user.last_name;
         document.getElementById("editEmail").value = user.email;
-        document.getElementById("editPhone").value = user.phone;
+        document.getElementById("editUsername").value = user.username;
         document.getElementById("editPassword").value = ''; // Assuming password should not be prefilled
     } else {
         // Handle error or notify user that user data is not available
@@ -104,6 +104,7 @@ updateForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     const formData = new FormData(updateForm);
+    const id = document.getElementById("editUserId").value;
     // formData.append("update", 1);
 
     console.log('yeyee')
@@ -116,7 +117,7 @@ updateForm.addEventListener("submit", async (e) => {
     } else {
         document.getElementById("edit-user-btn").value = "Please Wait...";
 
-        const data = await fetch('http://localhost:8000/api/update_user/${id}/', {
+        const data = await fetch('http://localhost:8000/api/update_user/'+id+'/', {
             method: "POST",
             body: formData,
         });
