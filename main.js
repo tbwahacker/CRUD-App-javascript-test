@@ -24,9 +24,9 @@ addForm.addEventListener("submit", async (e) => {
             method: "POST",
             body: formData,
         });
-        const response = await data.text();
+        const response = await data.json();
         console.log(response);
-        showAlert.innerHTML = response;
+        showAlert.innerHTML = response.message;
         document.getElementById("add-user-btn").value = "Add User";
         addForm.reset();
         addForm.classList.remove("was-validated");
@@ -121,9 +121,8 @@ updateForm.addEventListener("submit", async (e) => {
             method: "POST",
             body: formData,
         });
-        const response = await data.text();
-
-        showAlert.innerHTML = response;
+        const response = await data.json();
+        showAlert.innerHTML = response.message;
         document.getElementById("edit-user-btn").value = "Add User";
         updateForm.reset();
         updateForm.classList.remove("was-validated");
@@ -136,7 +135,7 @@ const deleteUser = async (id) => {
     const data = await fetch(`http://localhost:8000/api/delete_user/${id}/`, {
         method: "DELETE",
     });
-    const response = await data.text();
-    showAlert.innerHTML = response;
+    const response = await data.json();
+    showAlert.innerHTML = response.message;
     fetchAllUsers();
 };
