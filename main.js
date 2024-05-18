@@ -1,3 +1,5 @@
+const Api_url = 'http://localhost:8000/api';
+
 const addForm = document.getElementById("add-user-form");
 const updateForm = document.getElementById("edit-user-form");
 const showAlert = document.getElementById("showAlert");
@@ -36,7 +38,7 @@ addForm.addEventListener("submit", async (e) => {
 });
 
 const fetchAllUsers = async () => {
-    const data = await fetch(Api_url+"/get_users/", {
+    const data = await fetch(`${Api_url}/get_users/`, {
         method: "GET",
     });
     const responseData = await data.json();
