@@ -128,7 +128,7 @@
                         <th>First Name</th>
                         <th>Last Name</th>
                         <th>E-mail</th>
-                        <th>Phone</th>
+                        <th>Username</th>
                         <th>Action</th>
                     </tr>
                     </thead>
